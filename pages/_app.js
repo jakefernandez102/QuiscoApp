@@ -1,5 +1,14 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { QuioscoProvider } from '../context/QuioscoProvider.jsx';
+
+
+
+export default function App ( { Component, pageProps } )
+{
+  return (
+    <QuioscoProvider>
+      <Component { ...pageProps } />
+    </QuioscoProvider>
+  );
 }
