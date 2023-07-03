@@ -6,11 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npx prisma generate && <actual-build-command>"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts",
-    "postinstall": "prisma generate && <actual-build-command>"
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^4.16.2",
