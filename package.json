@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "npx prisma generate && npm run build"
+
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
