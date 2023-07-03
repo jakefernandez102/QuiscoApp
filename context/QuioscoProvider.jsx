@@ -18,7 +18,12 @@ const QuioscoProvider =({children})=>{
     const [product, setProduct]=useState({});
 
     const getCategories = async ()=>{
-        const {data} = await axios('/api/categorias');
+        const {data} = await axios('/api/categorias',{
+            method:'GET',
+            headers:{
+                "Content-Type" : "application/json"
+            }
+        });
         setCatgories(data)
     }
 
