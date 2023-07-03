@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 "cliente use"
 
@@ -54,20 +55,23 @@ const QuioscoProvider =({children})=>{
         setModal(!modal)
     }
 
-    const handleAddOrder = ({categoriaId,imagen, ...product })=>{
+    const handleAddOrder = ({categoriaId, ...product })=>{
 
         if(order.some(_order => _order.id === product.id)){
             
             const orderActual = order.filter(_order => _order.id === product.id);
             orderActual[0].quantity = product.quantity            
             setOrder([...orderActual])
+            toast.success('Pedido Editado correctamente')
 
         }else{
             setOrder(prevOrder => prevOrder = [...order,product])
+            toast.success('Pedido Agregado')
         }
-
         setModal(false)
     }
+
+
 
     return (
         <QuioscoContext.Provider
@@ -80,7 +84,8 @@ const QuioscoProvider =({children})=>{
                 handleChangeModal,
                 modal,
                 handleAddOrder,
-                order
+                order,
+
             }}
         >
             {children}

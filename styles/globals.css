@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.layout {}
+
 
 .bg-page {
   position: absolute;
@@ -16,8 +16,9 @@
   z-index: -111;
 }
 
-.product {
-  background-color: rgb(255 255 255 /.5);
+.product,
+.bg-white-blur {
+  background-color: rgb(255 255 255 /.3);
 
 }
 
