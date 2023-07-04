@@ -28,16 +28,22 @@ export default function Layout ( { children, page } )
 
     return (
         <>
+            <div className={ 'bg-page' }>
+            </div>
             <Head>
                 <title>Coffee - { page }</title>
                 <meta name='decription' content='Quisco Cafeteria' />
             </Head>
 
             <div className="layout  md:flex">
-                <aside className='bg-white  md:w-4/12 xl:w-1/4 2xl:1/5'>
+
+                <aside className='  md:w-4/12 xl:w-1/4 2xl:1/5'>
                     <Sidebar />
                 </aside>
-                <main className='md:w-8/12 xl:w-3/4 2xl:4/5 h-screen overflow-y-scroll'>
+                <main className='main md:w-8/12 xl:w-3/4 2xl:4/5 h-screen overflow-y-scroll'>
+
+                    <div className={ 'bg-page-main' }>
+                    </div>
                     <div className={ 'p-10' }>
                         <Pasos />
                         { children }

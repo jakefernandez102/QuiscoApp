@@ -8,6 +8,7 @@ export default function App ( { Component, pageProps } )
 {
   return (
     <QuioscoProvider>
+
       <Component { ...pageProps } />
     </QuioscoProvider>
   );

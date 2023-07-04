@@ -17,8 +17,6 @@ const Producto = ({product}) => {
         }else{
             setEdition(false)
         }
-        
-        console.log(edition)
     },[order])
 
     return (

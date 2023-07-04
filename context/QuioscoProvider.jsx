@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 
 "cliente use"
@@ -17,6 +18,10 @@ const QuioscoProvider =({children})=>{
     const [modal, setModal] = useState(false);
     const [order,setOrder]=useState([]);
     const [product, setProduct]=useState({});
+    const [name, setName]=useState('');
+    const [total, setTotal]=useState(0);
+
+    const router = useRouter();
 
     const getCategories = async ()=>{
         const {data} = await axios('/api/categorias',{
@@ -28,7 +33,6 @@ const QuioscoProvider =({children})=>{
         setCatgories(data)
     }
 
-    
 
     useEffect(()=>{
         getCategories()
@@ -43,9 +47,16 @@ const QuioscoProvider =({children})=>{
         // console.log(order)
     },[order])
 
+    useEffect(()=>{
+        const newTotal = order.reduce((total, product)=> (product.precio * product.quantity) + total, 0)
+        
+        setTotal(newTotal)
+    },[order])
+
     const handleClickCategory = (id)=>{
         const category = categories.filter(_category => _category.id === id);
         setActualCategory(category[0])
+        router.push('/')
     }
 
     const handleSetProducto = (producto)=>{
@@ -56,7 +67,6 @@ const QuioscoProvider =({children})=>{
     }
 
     const handleAddOrder = ({categoriaId, ...product })=>{
-
         if(order.some(_order => _order.id === product.id)){
             
             const orderActual = order.filter(_order => _order.id === product.id);
@@ -71,7 +81,20 @@ const QuioscoProvider =({children})=>{
         setModal(false)
     }
 
+    const handleEditQuantities = (id)=> {
+        const productoToUpdate = order.filter(_order => _order.id === id)
+        setModal(!modal)
+        setProduct(productoToUpdate[0])
+    }
+    const handleDeleteProduct = (id)=> {
+        const orderToUpdate = order.filter(_order => _order.id !== id)
 
+        setOrder([...orderToUpdate])
+    }
+    
+        const sendOrder = () =>{
+        console.log('sending order ...')
+    }
 
     return (
         <QuioscoContext.Provider
@@ -85,6 +108,12 @@ const QuioscoProvider =({children})=>{
                 modal,
                 handleAddOrder,
                 order,
+                handleEditQuantities,
+                handleDeleteProduct,
+                name,
+                setName,
+                sendOrder,
+                total
 
             }}
         >

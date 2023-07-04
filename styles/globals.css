@@ -12,17 +12,52 @@
   top: 0;
   background-image: url(/assets/img/logo.svg);
   background-size: 8rem;
-  opacity: .1;
+  opacity: .02;
+  z-index: -1;
+}
+
+.sidebar-bg {
+  background-color: rgb(255 255 255 /.7);
+}
+
+.product {
+  position: relative;
+  background-color: rgb(255 255 255 /.3);
+  z-index: 3;
+
+}
+
+.ReactModalPortal {
+  position: relative;
+  z-index: 3;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+
+}
+
+.bg-page-main {
+  position: relative;
   z-index: -111;
 }
 
-.product,
-.bg-white-blur {
-  background-color: rgb(255 255 255 /.3);
 
-}
 
-.modal-product {
-  position: relative;
-  z-index: 3;
+@media screen and (max-width: 767px) {
+
+  .bg-page-main {
+    position: absolute;
+    background-color: rgb(220, 222, 186);
+    background-image: url(/assets/img/logo.svg);
+    background-size: 8rem;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .1;
+    z-index: -111;
+  }
+
 }
