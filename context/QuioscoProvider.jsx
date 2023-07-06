@@ -69,9 +69,9 @@ const QuioscoProvider =({children})=>{
     const handleAddOrder = ({categoriaId, ...product })=>{
         if(order.some(_order => _order.id === product.id)){
             
-            const orderActual = order.filter(_order => _order.id === product.id);
-            orderActual[0].quantity = product.quantity            
-            setOrder([...orderActual])
+            const prodUpdated = order.map(prod => prod.id === product.id ? product : prod)
+            console.log(prodUpdated)
+            setOrder(prodUpdated)
             toast.success('Pedido Editado correctamente')
 
         }else{
@@ -84,6 +84,9 @@ const QuioscoProvider =({children})=>{
     const handleEditQuantities = (id)=> {
         const productoToUpdate = order.filter(_order => _order.id === id)
         setModal(!modal)
+        console.log(order)
+        console.log(product)
+        console.log(productoToUpdate)
         setProduct(productoToUpdate[0])
     }
     const handleDeleteProduct = (id)=> {
@@ -96,12 +99,13 @@ const QuioscoProvider =({children})=>{
         e.preventDefault();
 
         try {
-            const {data} = await axios.post('/api/ordenes', {
-                                                                pedido:order,
-                                                                nombre:name,
-                                                                total,
-                                                                fecha:new Date().toLocaleDateString('es-CR',{year:'numeric',weekday:'long',month:'long',day:'numeric'})
-                                                            })
+            await axios.post(
+                        '/api/ordenes', {
+                        pedido:order,
+                        nombre:name,
+                        total,
+                        fecha:new Date().toLocaleDateString('es-CR',{year:'numeric',weekday:'long',month:'long',day:'numeric'})
+                        })
             //reset app
             toast.success('Pedido Realizado correctamente');
             setTimeout(() => {

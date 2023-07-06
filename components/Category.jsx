@@ -28,7 +28,7 @@ const Category = ({category}) => {
 
             <button
                 type={'button'}
-                className={'btn-${nombre} text-2xl font-bold hover:cursor-pointer'}
+                className={`btn-${nombre} text-2xl font-bold hover:cursor-pointer`}
                 onClick={()=>{
                     handleClickCategory(id)
                     playBubble()

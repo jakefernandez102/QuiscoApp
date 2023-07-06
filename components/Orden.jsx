@@ -21,9 +21,10 @@ export default function Orden({orden}) {
     }
 
   return (
-    <div className={'border p-10 space-y-5'}>
+    <div className={'border p-10 space-y-5 shadow-xl'}>
             <h3 className={'text-2xl font-bold'}>Orden {id}</h3>
             <p className={'text-lg font-bold'}>Cliente: {nombre}</p>
+            <p className={'text-md font-bold'}>Fecha Facturacion: {fecha}</p>
 
             <div className="">
                 {pedido.map(platillo => 
