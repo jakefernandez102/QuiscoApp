@@ -50,7 +50,7 @@ export default function Orden({orden}) {
 
                     <button
                         type={'button'}
-                        className={'bg-indigo-600 hover:bg-lime-600 text-white mt-5 md:mt-0 py-3 px-10 uppercase font-bold rounded-lg'}
+                        className={'bg-blue-600 hover:bg-success text-white mt-5 md:mt-0 py-3 px-10 uppercase font-bold rounded-lg'}
                         onClick={completarOrden}
                     >
                         Completar Orden
