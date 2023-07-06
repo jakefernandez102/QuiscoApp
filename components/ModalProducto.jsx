@@ -113,7 +113,7 @@ const ModalProducto = () => {
                 <button
                     disabled={quantity === 0}
                     type={'button'}
-                    className={`${quantity === 0 ? 'bg-gray-400 px-5 py-2 mt-5 text-white font-bold uppercase rounded':'bg-indigo-600 hover:bg-indigo-800 px-5 py-2 mt-5 text-white font-bold uppercase rounded '}`}
+                    className={`${quantity === 0 ? 'bg-gray-400 px-5 py-2 mt-5 text-white font-bold uppercase rounded':'bg-blue-600 hover:bg-indigo-800 px-5 py-2 mt-5 text-white font-bold uppercase rounded '}`}
                     onClick={()=>handleAddOrder({...product,quantity})}
                 >
                     {edition ? 'Guardar Cambios':'Agregar Pedido'}

@@ -88,9 +88,9 @@ export default function Total(){
                             value={'Confirmar Pedido'}
                             className={`${verifyOrder() || name === '' || name.length <= 3
                                         ? 
-                                            'bg-slate-600 w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white' 
+                                            'bg-secondary w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-neutral' 
                                         : 
-                                            'bg-indigo-600 w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white'
+                                            'bg-primary w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white'
                                         }`}
                             disabled={ verifyOrder() || name === '' || name.length <= 3 }
                             onClick={sendOrder}

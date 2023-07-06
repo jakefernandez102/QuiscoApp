@@ -45,7 +45,7 @@ const Producto = ({product}) => {
                 <button 
                     
                     type={'button'}
-                    className={`${edition ? 'cursor-pointer bg-amber-600  hover:bg-amber-900 text-white w-fill mt-5 p-3 uppercase font-bold':'cursor-pointer bg-indigo-600  hover:bg-indigo-900 text-white w-fill mt-5 p-3 uppercase font-bold'}`}
+                    className={`${edition ? 'cursor-pointer bg-warning  hover:bg-amber-900 text-white w-fill mt-5 p-3 uppercase font-bold':'cursor-pointer bg-blue-600  hover:bg-indigo-900 text-white w-fill mt-5 p-3 uppercase font-bold rounded'}`}
                     onClick={()=> {
                         handleChangeModal()
                         handleSetProducto(product)

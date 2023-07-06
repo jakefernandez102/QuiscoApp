@@ -35,7 +35,7 @@ const ProductSumary = ({product}) => {
         <div className="">
             <button
                 type={'button'}
-                className={'bg-sky-700 flex gap-2 px-5 py-2 rounded-md text-white justify-center  font-bold uppercase shadow w-full'}
+                className={'bg-primary flex gap-2 px-5 py-2 rounded-md text-white justify-center  font-bold uppercase shadow w-full'}
                 onClick={()=> handleEditQuantities(product.id)}
                 >
                 <svg 
