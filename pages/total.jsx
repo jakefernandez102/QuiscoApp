@@ -93,6 +93,7 @@ export default function Total(){
                                             'bg-indigo-600 w-full lg:w-auto px-5 py-2 rounded uppercase font-bold text-white'
                                         }`}
                             disabled={ verifyOrder() || name === '' || name.length <= 3 }
+                            onClick={sendOrder}
                         />
                     </div>
                 </form>
