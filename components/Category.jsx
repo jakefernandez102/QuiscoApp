@@ -15,7 +15,10 @@ const Category = ({category}) => {
     return (
         <div 
             className={`${actualCategory?.id === id ? ' flex items-center gap-4 bg-amber-400 p-5' : ' flex items-center gap-4 w-fill border p-5 hover:bg-amber-400'}`}
-            
+            onClick={()=>{
+                handleClickCategory(id)
+                    playBubble()
+            }}
         >
             
             <Image 
@@ -29,10 +32,10 @@ const Category = ({category}) => {
             <button
                 type={'button'}
                 className={`btn-${nombre} text-2xl font-bold hover:cursor-pointer`}
-                onClick={()=>{
-                    handleClickCategory(id)
-                    playBubble()
-                }}
+                // onClick={()=>{
+                //     handleClickCategory(id)
+                //     playBubble()
+                // }}
             >
                 {nombre}
             </button>
