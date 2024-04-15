@@ -4,4 +4,4 @@ https://portfoliojakefernandez.netlify.app/
 
 The project is the first gif in the portfolio 
 
-![](https://github.com/jakefernandez102/QuiscoApp/tree/main/public/assets/img/QuiscoApp.mp4)
+![](https://github.com/jakefernandez102/QuiscoApp/tree/main/public/assets/img/QuiscoApp.gif)
